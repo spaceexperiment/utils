@@ -30,10 +30,9 @@ for root, dirs, filenames in os.walk(path):
         key = md5_file(file_path)
         files[key].append(file_path)
 
-duplicates = 0
-for k, v in files.items():
-    if len(v) > 1:
-        duplicates += 1
-        pprint(v)
-
-print '\n%s files with atleast one duplicate\n' % duplicates
+files = [x for x in files.values() if len(x) > 1]
+for duplicates in files:
+    print '\n\n_________________________________________'
+    pprint(duplicates)
+    print '_________________________________________'
+print '\n%s files with atleast one duplicate\n' % len(files)
