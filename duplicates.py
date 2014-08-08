@@ -1,6 +1,6 @@
 import os
 import sys
-import md5
+from hashlib import md5
 from pprint import pprint
 from collections import defaultdict
 
@@ -13,7 +13,7 @@ path = sys.argv[1]
 
 def md5_file(file_path, block_size=2**20 * 60):
     """ return md5 hash of a file, 2**20 is 1mb """
-    m = md5.new()
+    m = md5()
     with open(file_path, 'rb') as f:
         while True:
             chunk = f.read(block_size)
