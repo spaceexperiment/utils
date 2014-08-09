@@ -6,7 +6,7 @@ from collections import defaultdict
 
 
 if len(sys.argv) < 2:
-    print 'please enter a dir'
+    print('please enter a dir')
     sys.exit()
 path = sys.argv[1]
 
@@ -39,8 +39,8 @@ for paths in file_sizes:
 files = [x for x in files.values() if len(x) > 1]
 
 for duplicates in files:
-    print '\n\n_________________________________________'
+    print('\n\n_________________________________________')
     pprint(duplicates)
-    print '_________________________________________'
+    print('_________________________________________')
 
-print '\n%s files with atleast one duplicate\n' % len(files)
+print('\n%s files with atleast one duplicate\n' % len(files))
